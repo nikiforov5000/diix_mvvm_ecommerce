@@ -1,9 +1,8 @@
 import 'package:cloud_firestore/cloud_firestore.dart';
+import 'package:diix_mvvm_ecommerce/services/firestore_service.dart';
 
 class FirestoreDataSource {
-  final FirebaseFirestore _firestore;
-
-  FirestoreDataSource(this._firestore);
+  final _firestore = FirestoreService.instance;
 
   Future<DocumentSnapshot> fetchProductById(String id) {
     return _firestore.collection('products').doc(id).get();
