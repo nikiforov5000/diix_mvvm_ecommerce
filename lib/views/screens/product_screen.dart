@@ -9,14 +9,19 @@ class ProductScreen extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     viewModel.fetchFirstProduct();
-    return FutureBuilder(
-      future: viewModel.fetchFirstProduct(),
-      builder: (BuildContext context, snapshot) {
-        if (snapshot.connectionState == ConnectionState.waiting) {
-          return CircularProgressIndicator();
-        }
-        return Text(viewModel.product.toString());
-      },
+    return Scaffold(
+      body: SafeArea(
+        child: FutureBuilder(
+          /// TODO replace with real product
+          future: viewModel.fetchFirstProduct(),
+          builder: (BuildContext context, snapshot) {
+            if (snapshot.connectionState == ConnectionState.waiting) {
+              return CircularProgressIndicator();
+            }
+            return Text(viewModel.product!.title);
+          },
+        ),
+      ),
     );
   }
 }
