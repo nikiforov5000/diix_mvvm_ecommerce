@@ -13,4 +13,11 @@ class FirestoreDataSource {
     final firstProductSnapshot = await productCollection.limit(1).get();
     return firstProductSnapshot.docs.first;
   }
+
+  Future<List<QueryDocumentSnapshot>> fetchAllProducts() async {
+    final productCollection = await _firestore.collection('products').get();
+    final docs = productCollection.docs;
+    return docs;
+  }
+
 }

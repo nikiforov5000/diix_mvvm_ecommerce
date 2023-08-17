@@ -19,14 +19,15 @@ class ProductRepository {
   }
 
   Product fromFirestore(DocumentSnapshot doc) {
+    final data = doc.data() as Map<String, dynamic>;
     return Product(
-      id: doc['id'],
-      title: doc['title'],
-      price: doc['price'],
-      imgUrl: doc['imgUrl'],
-      description: doc['description'],
-      rate: doc['rate'],
-      category: doc['category'],
+      id: data['id'],
+      title: data['title'],
+      price: data['price'],
+      imgUrl: data['imgUrl'],
+      description: data['description'],
+      rate: data['rate'],
+      category: data['category'],
     );
   }
 
