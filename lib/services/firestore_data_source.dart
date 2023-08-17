@@ -16,8 +16,7 @@ class FirestoreDataSource {
 
   Future<List<QueryDocumentSnapshot>> fetchAllProducts() async {
     final productCollection = await _firestore.collection('products').get();
-    final docs = productCollection.docs;
-    return docs;
+    return productCollection.docs;
   }
 
 }

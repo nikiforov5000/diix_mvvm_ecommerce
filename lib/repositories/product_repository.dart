@@ -21,13 +21,13 @@ class ProductRepository {
   Product fromFirestore(DocumentSnapshot doc) {
     final data = doc.data() as Map<String, dynamic>;
     return Product(
-      id: data['id'],
-      title: data['title'],
-      price: data['price'],
-      imgUrl: data['imgUrl'],
-      description: data['description'],
-      rate: data['rate'],
-      category: data['category'],
+      id: data['id'] ?? '',
+      title: data['title'] ?? '',
+      price: data['price'] ?? 0.0,
+      imgUrl: data['imgUrl'] ?? '',
+      description: data['description'] ?? '',
+      rate: data['rate'] ?? '',
+      category: data['category'] ?? '',
     );
   }
 
