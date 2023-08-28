@@ -35,15 +35,15 @@ class _ProductListScreenState extends State<ProductListScreen> {
     return StreamBuilder<List<Product>>(
       stream: _productListViewModel.productsStream,
       builder: (BuildContext context, snapshot) {
-        return Row(
+        return Column(
           children: [
-            ProductListSection(snapshot),
             Column(
               children: [
                 FirstProductButton(productListViewModel: _productListViewModel),
                 AllProductsButton(productListModelView: _productListViewModel),
               ],
             ),
+            ProductListSection(snapshot),
           ],
         );
       },

@@ -16,7 +16,7 @@ class ProductScreen extends StatelessWidget {
           future: viewModel.fetchFirstProduct(),
           builder: (BuildContext context, snapshot) {
             if (snapshot.connectionState == ConnectionState.waiting) {
-              return CircularProgressIndicator();
+              return const CircularProgressIndicator();
             }
             return Text(viewModel.product!.title);
           },

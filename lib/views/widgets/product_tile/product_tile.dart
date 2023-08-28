@@ -7,15 +7,17 @@ import 'package:flutter/material.dart';
 
 class ProductTile extends StatelessWidget {
   final ProductTileViewModel _viewModel;
+  final VoidCallback _onTapCallback;
 
-  const ProductTile({required viewModel, Key? key})
+  const ProductTile({required viewModel, required onTapCallback, Key? key})
       : _viewModel = viewModel,
+        _onTapCallback = onTapCallback,
         super(key: key);
 
   @override
   Widget build(BuildContext context) {
     return GestureDetector(
-      onTap: () {},
+      onTap: _onTapCallback,
       child: Container(
         color: Colors.grey.shade200,
         width: 130,
