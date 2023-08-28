@@ -1,6 +1,6 @@
 import 'package:diix_mvvm_ecommerce/models/product.dart';
 import 'package:diix_mvvm_ecommerce/viewmodels/product_tile_viewmodel.dart';
-import 'package:diix_mvvm_ecommerce/views/widgets/product_tile.dart';
+import 'package:diix_mvvm_ecommerce/views/widgets/product_tile/product_tile.dart';
 import 'package:flutter/material.dart';
 
 class ProductListSection extends StatelessWidget {
