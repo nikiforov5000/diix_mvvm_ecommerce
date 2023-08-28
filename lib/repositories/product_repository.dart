@@ -15,7 +15,7 @@ class ProductRepository {
 
   Future<Product> getFirstProduct() async {
     final doc = await _dataSource.fetchFirstProduct();
-    return fromFirestore(doc);
+    return fromFirestore(doc.first);
   }
 
   Product fromFirestore(DocumentSnapshot doc) {

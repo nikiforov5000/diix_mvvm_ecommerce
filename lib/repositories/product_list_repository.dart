@@ -13,4 +13,9 @@ class ProductListRepository {
     final docs = await _dataSource.fetchAllProducts();
     return docs.map((doc) => _productRepository.fromFirestore(doc)).toList();
   }
+
+  Future<List<Product>> getFirstProduct() async {
+    final docs = await _dataSource.fetchFirstProduct();
+    return docs.map((doc) => _productRepository.fromFirestore(doc)).toList();
+  }
 }
