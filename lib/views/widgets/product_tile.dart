@@ -10,7 +10,7 @@ class ProductTile extends StatelessWidget {
   Widget build(BuildContext context) {
     return Row(
       children: [
-        Text(_product.title.split(' ').getRange(0, 2).join('')),
+        Text(_product.title.split(' ').getRange(0, 2).join(' ')),
       ],
     );
   }
