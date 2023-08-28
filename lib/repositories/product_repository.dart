@@ -24,7 +24,7 @@ class ProductRepository {
       id: data['id'] ?? '',
       title: data['title'] ?? '',
       price: data['price'] ?? 0.0,
-      imgUrl: data['imgUrl'] ?? '',
+      imageUrl: data['imgUrl'] ?? '',
       description: data['description'] ?? '',
       rate: data['rate'] ?? '',
       category: data['category'] ?? '',
