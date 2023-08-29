@@ -33,6 +33,7 @@ class ProductListSection extends StatelessWidget {
             viewModel: ProductTileViewModel(product: product),
             onTapCallback: () {
               print('clicked on product ${product.title}');
+              Navigator.pushNamed(context, ProductScreen.id, arguments: product);
             },
           );
         },

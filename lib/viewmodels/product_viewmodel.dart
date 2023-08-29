@@ -1,7 +1,8 @@
 import 'package:diix_mvvm_ecommerce/models/product.dart';
 import 'package:diix_mvvm_ecommerce/repositories/product_repository.dart';
+import 'package:flutter/cupertino.dart';
 
-class ProductViewModel {
+class ProductViewModel extends ChangeNotifier {
   final ProductRepository _productRepository;
 
   Product? _product;
