@@ -3,6 +3,7 @@ import 'package:diix_mvvm_ecommerce/models/product.dart';
 import 'package:diix_mvvm_ecommerce/services/firestore_data_source.dart';
 
 class ProductRepository {
+
   final FirestoreDataSource _dataSource;
 
   ProductRepository(this._dataSource);

@@ -6,12 +6,12 @@ import 'package:flutter/material.dart';
 
 enum ScreenState { idle, loading, error, ready }
 
-class ProductListViewModel extends ChangeNotifier{
+class ProductListViewModel extends ChangeNotifier {
   final ProductListRepository _productListRepository;
   ScreenState _state = ScreenState.idle;
 
   final StreamController<List<Product>> _productsStreamController =
-    StreamController<List<Product>>();
+      StreamController<List<Product>>();
   Stream<List<Product>> get productsStream => _productsStreamController.stream;
 
   ProductListViewModel(this._productListRepository);
@@ -25,9 +25,11 @@ class ProductListViewModel extends ChangeNotifier{
   bool isLoading() {
     return _state == ScreenState.loading;
   }
+
   bool isReady() {
     return _state == ScreenState.ready;
   }
+
   bool hasError() {
     return _state == ScreenState.error;
   }
@@ -40,15 +42,13 @@ class ProductListViewModel extends ChangeNotifier{
     notifyListeners();
   }
 
-    Future<void> fetchFirstProduct() async {
+  Future<void> fetchFirstProduct() async {
     _state = ScreenState.loading;
     _products = await _productListRepository.getFirstProduct();
     _productsStreamController.add(_products);
     _state = ScreenState.ready;
     notifyListeners();
   }
-
-
 
   @override
   void dispose() {

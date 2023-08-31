@@ -33,8 +33,10 @@ class MyApp extends StatelessWidget {
               }
             );
           }
+          return null;
         },
         routes: {
+          /// Routes
         },
         home: Wrapper(),
       ),

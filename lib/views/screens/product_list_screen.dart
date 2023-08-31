@@ -43,7 +43,7 @@ class _ProductListScreenState extends State<ProductListScreen> {
                 AllProductsButton(productListModelView: _productListViewModel),
               ],
             ),
-            ProductListSection(snapshot),
+            ProductListSection(),
           ],
         );
       },

@@ -15,8 +15,7 @@ class ProductScreen extends StatelessWidget {
     return Scaffold(
       body: SafeArea(
         child: FutureBuilder(
-          /// TODO replace with real product
-          future: viewModel.fetchFirstProduct(),
+          future: viewModel.fetchProduct(productId),
           builder: (BuildContext context, snapshot) {
             if (snapshot.connectionState == ConnectionState.waiting) {
               return const CircularProgressIndicator();
