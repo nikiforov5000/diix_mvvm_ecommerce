@@ -1,19 +1,21 @@
 import 'package:diix_mvvm_ecommerce/viewmodels/product_viewmodel.dart';
 import 'package:flutter/material.dart';
+import 'package:provider/provider.dart';
 
 class ProductScreen extends StatelessWidget {
-  final ProductViewModel viewModel;
+  final String productId;
 
-  const ProductScreen({Key? key, required this.viewModel}) : super(key: key);
+  static String id = '/productScreen';
+
+  const ProductScreen({Key? key,required this.productId}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
-    viewModel.fetchFirstProduct();
+    final ProductViewModel viewModel = Provider.of<ProductViewModel>(context);
     return Scaffold(
       body: SafeArea(
         child: FutureBuilder(
-          /// TODO replace with real product
-          future: viewModel.fetchFirstProduct(),
+          future: viewModel.fetchProduct(productId),
           builder: (BuildContext context, snapshot) {
             if (snapshot.connectionState == ConnectionState.waiting) {
               return const CircularProgressIndicator();
